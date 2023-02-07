@@ -1,0 +1,16 @@
+[
+  {
+    "email": "student@uwo.ca",
+    "password": "student",
+    "isLibrarian": false,
+    "firstName": "Albert",
+    "lastName": "Einstein"
+  },
+  {
+    "email": "librarian@uwo.ca",
+    "password": "librarian",
+    "isLibrarian": true,
+    "firstName": "Amir",
+    "lastName": "HaghighatiMaleki"
+  }
+]

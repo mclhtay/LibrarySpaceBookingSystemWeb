@@ -1,0 +1,62 @@
+[
+    {
+        "spaceId": 0,
+        "location": "Taylor - Room 155",
+        "seats": 4,
+        "filters": {
+            "outlets": true,
+            "accessible": true,
+            "quiet": false,
+            "private": true,
+            "media": true
+        }
+    },
+    {
+        "spaceId": 2,
+        "location": "Weldon - Room 17",
+        "seats": 6,
+        "filters": {
+            "outlets": true,
+            "accessible": true,
+            "quiet": false,
+            "private": true,
+            "media": true
+        }
+    },
+    {
+        "spaceId": 3,
+        "location": "Weldon - Room 20",
+        "seats": 4,
+        "filters": {
+            "outlets": false,
+            "accessible": false,
+            "quiet": false,
+            "private": true,
+            "media": true
+        }
+    },
+    {
+        "spaceId": 6,
+        "location": "Middlesex - Room 116",
+        "seats": 8,
+        "filters": {
+            "outlets": true,
+            "accessible": true,
+            "quiet": true,
+            "private": true,
+            "media": true
+        }
+    },
+    {
+        "spaceId": 7,
+        "location": "UCC - Room 41",
+        "seats": 16,
+        "filters": {
+            "outlets": true,
+            "accessible": true,
+            "quiet": false,
+            "private": true,
+            "media": true
+        }
+    }
+]
