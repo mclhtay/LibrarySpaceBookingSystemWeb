@@ -1,5 +1,5 @@
 export interface Space {
-  spaceId: string;
+  spaceId: number;
   seats: number;
   location: string;
   filters: {
