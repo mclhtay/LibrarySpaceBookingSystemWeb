@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/LibrarySpaceBookingSystemWeb/static/js/main.854400be.js",
+    "main.js": "/LibrarySpaceBookingSystemWeb/static/js/main.04a16782.js",
     "static/media/logo.svg": "/LibrarySpaceBookingSystemWeb/static/media/logo.f631c8398c62c27631f08d980e4b2abf.svg",
     "index.html": "/LibrarySpaceBookingSystemWeb/index.html",
-    "main.854400be.js.map": "/LibrarySpaceBookingSystemWeb/static/js/main.854400be.js.map"
+    "main.04a16782.js.map": "/LibrarySpaceBookingSystemWeb/static/js/main.04a16782.js.map"
   },
   "entrypoints": [
-    "static/js/main.854400be.js"
+    "static/js/main.04a16782.js"
   ]
 }
