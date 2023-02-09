@@ -1,3 +1,4 @@
+import { Cancel, Check } from '@mui/icons-material';
 import { Grid, Skeleton } from '@mui/material';
 import { DataGrid, GridColDef, GridSlotsComponent } from '@mui/x-data-grid';
 import React from 'react';
@@ -6,10 +7,11 @@ interface Props {
   headers: string[];
   spacing?: number;
   loading?: boolean;
+  convertBooleanToIcon?: boolean;
   countPerPage?: number;
   data: {[key:string]: any}[],
   widths?: number[],
-  customComponents: Partial<GridSlotsComponent>,
+  customComponents?: Partial<GridSlotsComponent>,
   handleCellClick: (e:any) => void
 }
 
@@ -26,16 +28,25 @@ export function DataTable(
     data,
     widths,
     customComponents,
-    handleCellClick
+    handleCellClick,
+    convertBooleanToIcon
   }: Props
 ){
   const formattedHeaders: GridColDef[] = React.useMemo(() => {
-    return headers.map((header, i):GridColDef => ({
-      field: header,
-      headerName: header,
-      flex: widths? widths[i] : 150,  
-    }));
-  }, [headers, widths]);
+    return headers.map((header, i):GridColDef => {
+      const h: {[key: string]: any} = {
+        field: header,
+        headerName: header,
+        flex: widths? widths[i] : 150, 
+      };
+      if(convertBooleanToIcon && i > 0) {
+        h['renderCell']= (params: any) => {
+          return params.value? <Check color='success' /> : <Cancel color='error' />
+        }
+      }
+      return h as (GridColDef);
+    });
+  }, [headers, widths, convertBooleanToIcon]);
 
   const formattedData = React.useMemo(() => {
     return data.map((d, i) => ({
@@ -76,4 +87,5 @@ DataTable.defaultProps = {
   loading:false,
   countPerPage:10,
   widths: undefined,
+  convertBooleanToIcon: false,
 };

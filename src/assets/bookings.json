@@ -1,1 +1,16 @@
-[]
+[
+  {
+      "bookingId": 1,
+      "spaceId": 0,
+      "userId": "student@uwo.ca",
+      "start": "2023-02-10 10:00:00",
+      "end": "2023-02-10 11:00:00"
+  },
+  {
+      "bookingId": 2,
+      "spaceId": 2,
+      "userId": "student@uwo.ca",
+      "start": "2023-02-01 10:00:00",
+      "end": "2023-02-01 11:00:00"
+  }
+]

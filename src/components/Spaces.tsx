@@ -5,13 +5,15 @@ import { GridFooter, GridFooterContainer } from '@mui/x-data-grid';
 import { 
   Button, Dialog, DialogActions, DialogContent, 
   DialogTitle, IconButton, Toolbar, Typography,
-  Stack
+  Stack,
  } from '@mui/material';
 import { AddCircle, Delete } from '@mui/icons-material';
+import { AddSpace } from './AddSpace';
 
 interface SpacesProps {
-  spaces: Space[]
-  handleDeleteSpace: (s: number) => void
+  spaces: Space[];
+  handleDeleteSpace: (s: number) => void;
+  handleAddSpace: (s: Space) => void;
 }
 
 const SpaceHeaders = [
@@ -24,9 +26,13 @@ const SpaceHeaders = [
   'Media',
 ];
 
-export function Spaces({spaces, handleDeleteSpace}: SpacesProps){
+export function Spaces({
+  spaces, handleDeleteSpace,
+  handleAddSpace
+}: SpacesProps){
   const [allSpaces, setAllSpaces] = useState<any[]>([]);
   const [deleteDialogOpen, setDeleteDialogOpen] = useState<boolean>(false);
+  const [addDialogOpen, setAddDialogOpen] = useState<boolean>(false);
   const [selectedSpace, setSelectedSpace] = useState<number|null>(null);
 
   React.useEffect(() => {
@@ -55,13 +61,17 @@ export function Spaces({spaces, handleDeleteSpace}: SpacesProps){
     setDeleteDialogOpen(true)
   }
 
+  function handleAddIconClick(){
+    setAddDialogOpen(true);
+  }
+
   function SpacesHeader(){
     return (
       <Toolbar>
         <Typography variant='h6'>
           All spaces
         </Typography>
-        <IconButton>
+        <IconButton onClick={() => handleAddIconClick()}>
           <AddCircle color='primary' />
         </IconButton>
       </Toolbar>
@@ -91,6 +101,12 @@ export function Spaces({spaces, handleDeleteSpace}: SpacesProps){
 
   return (
     <>
+    <AddSpace
+      open={addDialogOpen}
+      handleAddSpace={handleAddSpace}
+      handleClosePrompt={() => setAddDialogOpen(false)}
+      spaceNames={allSpaces.map(s => s.Location)}
+     />
     <Dialog 
       open={deleteDialogOpen} onClose={() => setDeleteDialogOpen(false)}>
       <DialogTitle>Are you sure you want to delete this space?</DialogTitle>

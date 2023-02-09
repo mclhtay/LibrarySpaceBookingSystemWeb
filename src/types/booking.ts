@@ -1,6 +1,6 @@
 export interface Booking {
-  bookingId: string;
-  spaceId: string;
+  bookingId: number;
+  spaceId: number;
   userId: string;
   start: Date;
   end: Date
