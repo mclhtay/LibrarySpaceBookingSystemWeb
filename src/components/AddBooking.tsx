@@ -133,7 +133,7 @@ export function AddBooking({
          i <= moment(selectedDay.format("YYYY/MM/DD")).add(end, 'hours'); i.add(1, 'hour')){
           spaceToTime[space.spaceId].push(!bookings.find(b => 
             /* @ts-ignore */
-            b.start <= i &&b.end >= i && b.spaceId === space.spaceId))
+            b.start <= i &&b.end > i && b.spaceId === space.spaceId))
         }
     }
     const timeBasedHeaders: string [] = [];
